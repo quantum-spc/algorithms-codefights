@@ -1,0 +1,19 @@
+function allLongestStrings(inputArray) {
+	var maxLength = 0;
+	var num = 0;
+	var result = new Array();
+	
+	for (i=0; i<inputArray.length; i++) {
+		if (inputArray[i].length == maxLength) {
+			result[num] = inputArray[i];
+			num++;
+		} else if (inputArray[i].length > maxLength) {
+			maxLength = inputArray[i].length;
+			num = 0;
+			result[num] = inputArray[i];
+			num++;
+		}
+	}
+	
+	return result;
+}

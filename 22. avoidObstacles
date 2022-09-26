@@ -1,0 +1,13 @@
+function avoidObstacles(inputArray) {
+	for (var i=1; inputArray.length; i++) {
+		var sw = true;
+		for (var j=0; j<inputArray.length; j++) {
+			if (inputArray[j] % i == 0) {
+			sw = false;
+		}
+	}
+	
+	if (sw) {
+		return i;
+	}
+}

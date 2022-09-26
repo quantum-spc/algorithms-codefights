@@ -1,0 +1,8 @@
+function reverseParentheses(s) {
+	if (s.includes('(')) {
+		var regExp = /\(([^()]*)\)/i;
+		return reverseParentheses(s.replace(regExp, regExp.exec(s)[1].split('').reverse().join('')));
+	} else {
+		return s;
+	}
+}

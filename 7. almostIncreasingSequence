@@ -1,0 +1,20 @@
+boolean almostIncreasingSequence(int[] sequence) {
+	boolean flag = false;
+	
+	for (int i=0; i<sequence.length-1; i++) {
+		if (sequence[i] >= sequence[i+1]) {
+			if (flag) {
+				return false;
+			} else {
+				flag = true;
+				if (i !=0 && i+2 < sequence.length) {
+					if (sequence[i-1] >= sequence[i+1] && sequence[i] >= sequence[i+2]) {
+						return false;
+					}
+				}
+			}
+		}
+	}
+	
+	return true;
+}

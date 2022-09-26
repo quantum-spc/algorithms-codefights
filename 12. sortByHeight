@@ -1,0 +1,34 @@
+function sortByHeight(a) {
+	var result = new Array();
+	var treeLocation = new Array();
+	
+	var treeNum = 0;
+	for (i=0; i<a.length; i++) {
+		if (a[i] == -1) {
+			treeLocation[treeNum] = i;
+			treeNum++;
+		}
+	}
+	treeNum = 0;
+	
+	var b = a.sort(function(a, b){ return a-b; });
+	var bNum = 0;
+	for (i=0; i<a.length; i++) {
+		if (b[i] != -1) {
+			bNum = i;
+			break;
+		}
+	}
+	
+	for (i=0; i<a.length; i++) {
+		if (i == treeLocation[treeNum]) {
+			result[i] = -1;
+			treeNum++;
+		} else {
+			result[i] = b[bNum];
+			bNum++;
+		}
+	}
+	
+	return result;
+}

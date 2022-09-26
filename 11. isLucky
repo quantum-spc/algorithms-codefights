@@ -1,0 +1,14 @@
+function isLucky(n) {
+	var halfLength = n.toString().length/2;
+	
+	var result1 = 0;
+	var result2 = 0;
+	for (i=0; i<n.toString().length; i++) {
+		if (i<halfLength) {
+			result1 += Number(n.toString().charAt(i));
+		} else {
+			result2 += Number(n.toString().charAt(i));
+		}
+	}
+	return result1 == result2 ? true : false;
+}

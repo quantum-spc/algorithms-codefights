@@ -1,0 +1,15 @@
+function isIPv4Address(inputString) {
+	var inputString = inputString.split('.');
+	
+	if (inputString.length != 4) {
+		return false;
+	}
+	
+	for (var i=0; i<inputString.length; i++) {
+		if (inputString[i] > 255 || inputString[i] < 0 || isNaN(inputString[i]) == true || inputString[i] == "") {
+			return false;
+		}
+	}
+	
+	return true;
+}

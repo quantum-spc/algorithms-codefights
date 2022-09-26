@@ -1,0 +1,23 @@
+function palindromeRearranging(inputString) {
+
+	var sw = (inputString.length%2 != 0) ? true : false;
+	
+	var alphabet;
+	var stringNum;
+	while (inputString.length != 0) {
+		alphabet = inputString.charAt(0);
+		stringNum = inputString.match(new RegExp(alphabet, "g")).length;
+		inputString = inputString.replace(new RegExp(alphabet,'gi'),"");
+		
+		if (stringNum%2 != 0 && !sw) {
+			return false;
+		}
+		
+		if (stringNum%2 != 0 && sw) {
+			sw = false;
+		}
+	
+	}
+	
+	return true;
+}

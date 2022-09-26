@@ -1,0 +1,11 @@
+int makeArrayConsecutive2(int[] statues) {
+	Arrays.sort(statues);
+	
+	int result = statues[statues.length-1]-statues[0];
+	for (int i=0; i<statues.length; i++) {
+		if (statues[i] > statues[0] && statues[i] < statues[statues.length-1]) {
+			result--;
+		}
+	}
+	return (result == 0) ? result : result-1;
+}

@@ -1,0 +1,16 @@
+function addBorder(picture) {
+	var result = new Array();
+	
+	for (i=0; i<picture.length; i++) {
+		result[i+1] = "*"+picture[i]+"*";
+	}
+	
+	result[0] = "";
+	result[picture.length+1] = "";
+	for (i=0; i<picture[0].length+2; i++) {
+		result[0] += "*";
+		result[picture.length+1] += "*";
+	}
+	
+	return result;
+}
